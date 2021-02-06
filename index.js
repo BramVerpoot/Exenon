@@ -23,4 +23,4 @@ client.categories = fs.readdirSync("./commands/");
 ["command"].forEach(handler => {
     require(`./handlers/${handler}`)(client)
 })
-client.login('ODA1NTE4NjE2NjUyMDIxODMx.YBcDrA.uPluCkTh90fQ9G-oXPklo2O3Tqo')
+client.login(config.token)
