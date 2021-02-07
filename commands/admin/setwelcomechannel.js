@@ -21,7 +21,7 @@ module.exports = {
         })
 
         if (data) {
-            await prefixModel.findOneAndRemove({
+            await welcomeModel.findOneAndRemove({
                 GuildID: message.guild.id
             })
         }
@@ -32,7 +32,11 @@ module.exports = {
         })
         newData.save()
 
-        message.reply('ok')
+        let embed = new MessageEmbed()
+        .setColor(colors.pink)
+        .setDescription(`The welcome channel is now ${channel}!`)
+        channel.send(embed)
+        
     
 }
 
