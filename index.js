@@ -6,7 +6,7 @@ const client = new Client({
     partials: ['MESSAGE', 'CHANNEL', 'REACTION']
 })
 
-mongoose.connect('mongodb+srv://bram:bram@discord.w6jiw.mongodb.net/Data', {
+mongoose.connect('URI', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false
