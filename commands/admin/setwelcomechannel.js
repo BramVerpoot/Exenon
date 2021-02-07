@@ -1,11 +1,13 @@
-const { MessageEmbed } = require("discord.js")
+const {
+    MessageEmbed
+} = require("discord.js")
 const welcomeModel = require("../../models/welcomechannel")
 const colors = require("../../colors.json")
 
 module.exports = {
-    name : 'setwelcomechannel',
-    category : 'admin',
-    description : 'Sets the welcome channel for the server!',
+    name: 'setwelcomechannel',
+    category: 'admin',
+    description: 'Sets the welcome channel for the server!',
 
     /**
      * @param {Client} client
@@ -13,7 +15,7 @@ module.exports = {
      * @param {String[]} args
      */
 
-    run : async(client, message, args) => {
+    run: async (client, message, args) => {
 
         channel = message.channel
         const data = await welcomeModel.findOne({
@@ -33,11 +35,11 @@ module.exports = {
         newData.save()
 
         let embed = new MessageEmbed()
-        .setColor(colors.pink)
-        .setDescription(`The welcome channel is now ${channel}!`)
+            .setColor(colors.pink)
+            .setDescription(`The welcome channel is now ${channel}!`)
         channel.send(embed)
-        
-    
-}
+
+
+    }
 
 }
